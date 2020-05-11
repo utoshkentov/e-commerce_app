@@ -35,9 +35,12 @@ class App extends Component {
                         ...snapShot.data()
                     })
                 });
-            } else {
-                setCurrentUser(userAuth)
             }
+            setCurrentUser(userAuth)
+            // addCollectionAndDocuments(
+            //     'collections',
+            //     collectionsArray.map(({title, items}) => ({title, items}))
+            // )
         })
     }
 
@@ -58,8 +61,8 @@ class App extends Component {
                         exact
                         path='/signin'
                         render={() => this.props.currentUser
-                            ? (<Redirect to='/' />)
-                            : (<SignInAndSignUpPage />)}
+                            ? (<Redirect to='/'/>)
+                            : (<SignInAndSignUpPage/>)}
                     />
                 </Switch>
             </div>
